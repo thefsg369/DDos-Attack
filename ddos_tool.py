@@ -10,7 +10,7 @@ VERDE = '\033[92m'
 RESET = '\033[0m'  
 
 def limpiar_pantalla():
-    os.system('clear')  # Limpiar pantalla para Linux y MacOS
+    os.system('clear')
 
 def mostrar_banner():
     print(ROJO + r"""
