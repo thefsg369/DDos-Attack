@@ -8,19 +8,20 @@ Esta herramienta permite realizar pruebas de ataques de DDoS (Denegación de Ser
 ### Requisitos
 - **Python**: Asegúrate de tener Python instalado. Puedes seguir estos pasos para instalarlo:
 
-# En Ubuntu
+### En Ubuntu
 sudo apt update
 sudo apt install python3 python3-pip
 
-# En Arch
+### En Arch
 sudo pacman -Syu python python-pip
 
-#clonar el repositorio 
+### Clonar el repositorio 
 
 git clone https://github.com/thefsg369/DDOS.git
 cd DDOS
 
-#Ejecutar la herramienta 
+### Ejecutar la herramienta 
+
 python3 ./ddos_tool.py
 
 
