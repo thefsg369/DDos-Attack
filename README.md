@@ -26,4 +26,5 @@ cd DDOS
 
 python3 ./ddos_tool.py
 
-
+# Donaciones
+* LTC: ltc1qa3z83sddk052czdv7ts55pfdpjzchd2cedmnx4
