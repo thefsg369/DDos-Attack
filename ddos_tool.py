@@ -23,7 +23,7 @@ ooooooooooo.   oooooooooo.     .oooooo.    .oooooo..o
  888     d88'  888     d88' `88b    d88' oo     .d8P 
 o888bood8P'   o888bood8P'    `Y8bood8P'  8""88888P'
 """ + RESET)
-    print(ROJO + "                    thefsg369" + RESET)
+    print(ROJO + "              (Jesús803576) (thefsg369)" + RESET)
 
 def mostrar_menu():
 
