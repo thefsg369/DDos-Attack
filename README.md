@@ -27,6 +27,8 @@ cd DDOS
 
 ### Ejecutar la herramienta 
 
+chmod +x ddos_tool.py
+
 python3 ./ddos_tool.py
 
 # Donaciones
