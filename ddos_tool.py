@@ -58,12 +58,13 @@ def prueba_ddos(url, num_solicitudes, hilos):
     print(f"Tiempo total: {tiempo_final - tiempo_inicio} segundos")
 
 def opcion_ddos():
-    limpiar_pantalla()  # Limpiar la pantalla antes de mostrar la advertencia
+    limpiar_pantalla()  
     mostrar_banner()
     
-    print()  # Espacio adicional
+    print() 
     print(ROJO + "ADVERTENCIA: Esta acción podría ser ilegal y tiene consecuencias serias." + RESET)
 
+    print() 
     url = input(VERDE + "Ingresa la URL objetivo: " + RESET) 
     num_solicitudes = int(input(VERDE + "Número de solicitudes: " + RESET))  
     hilos = int(input(VERDE + "Número de hilos: " + RESET))  
