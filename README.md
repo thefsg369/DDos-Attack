@@ -21,9 +21,9 @@ sudo pacman -Syu python python-pip
 
 ### Clonar el repositorio 
 
-git clone https://github.com/thefsg369/DDOS.git
+git clone https://github.com/thefsg369/DDos-Attack.git
 
-cd DDOS
+cd DDos-Attack
 
 ### Ejecutar la herramienta 
 
