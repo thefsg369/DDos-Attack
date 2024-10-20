@@ -10,7 +10,7 @@ VERDE = '\033[92m'
 RESET = '\033[0m'  
 
 def limpiar_pantalla():
-    os.system('clear')  
+    os.system('clear')  # Limpiar pantalla para Linux y MacOS
 
 def mostrar_banner():
     print(ROJO + r"""
@@ -58,35 +58,38 @@ def prueba_ddos(url, num_solicitudes, hilos):
     print(f"Tiempo total: {tiempo_final - tiempo_inicio} segundos")
 
 def opcion_ddos():
+    limpiar_pantalla()  # Limpiar la pantalla antes de mostrar la advertencia
     mostrar_banner()
-
     
-    print() 
-
+    print()  # Espacio adicional
     print(ROJO + "ADVERTENCIA: Esta acción podría ser ilegal y tiene consecuencias serias." + RESET)
+
     url = input(VERDE + "Ingresa la URL objetivo: " + RESET) 
     num_solicitudes = int(input(VERDE + "Número de solicitudes: " + RESET))  
     hilos = int(input(VERDE + "Número de hilos: " + RESET))  
 
     confirmacion = input(VERDE + "¿Estás seguro de continuar? (s/n): " + RESET)
     if confirmacion.lower() == 's':
+        limpiar_pantalla()  # Limpiar pantalla antes de ejecutar el ataque
         print(ROJO + "Ejecutando opción de DDoS..." + RESET)
         prueba_ddos(url, num_solicitudes, hilos)
     else:
         print(VERDE + "Acción cancelada." + RESET)
+
     input(VERDE + "Presiona 1 para volver al menú: " + RESET)
 
 def main():
     while True:
-        limpiar_pantalla() 
+        limpiar_pantalla()  # Limpiar la pantalla antes de mostrar el menú
         mostrar_menu()
      
         opcion = input(VERDE + "Selecciona una opción (1-2): " + RESET)
 
         if opcion == '1':
-            limpiar_pantalla()  
+            limpiar_pantalla()  # Limpiar la pantalla antes de la opción DDoS
             opcion_ddos()
         elif opcion == '2':
+            limpiar_pantalla()  # Limpiar pantalla antes de salir
             print(VERDE + "Saliendo..." + RESET)
             break
         else:
