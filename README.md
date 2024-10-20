@@ -3,6 +3,9 @@
 ## Descripción
 Esta herramienta permite realizar pruebas de ataques de DDoS (Denegación de Servicio Distribuida). **Advertencia: El uso indebido de esta herramienta es ilegal y tiene consecuencias serias. Úsela bajo su propia responsabilidad y solo con fines educativos.**
 
+![2024-10-20_14-59](https://github.com/user-attachments/assets/0d758126-6519-48ba-9cf3-6419aa9f3760)
+
+
 ## Instalación
 
 ### Requisitos
