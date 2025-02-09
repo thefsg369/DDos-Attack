@@ -32,4 +32,4 @@ chmod +x ddos_tool.py
 python3 ./ddos_tool.py
 
 # Donaciones
-* LTC: LPVKueLdZ88Mk6cc4fcpWbQANn5Cn9jXtV
+* 
